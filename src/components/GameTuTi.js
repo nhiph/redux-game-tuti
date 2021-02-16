@@ -35,12 +35,12 @@ class GameTuTi extends Component {
 const mapDispatchToProps = dispatch => {
     return {
         playGame: () => {
-            //Khai bao ham lap di lap lai
+            //Khai bao ham lap di lap lai, dispatch lien tuc 1 lan 10 cai action random
             let count = 0;
             let randomComputerItem = setInterval(()=>{
                 dispatch({
-                    type: 'RANDOM',
-                })
+                    type: 'RAN_DOM',
+                });
                 count ++;
                 if(count >5){
                     //Ham nay khi so lan dem > 10, stop ham setInterval
@@ -48,10 +48,10 @@ const mapDispatchToProps = dispatch => {
 
                     // tiep tuc xu ly du lien resultinfo
                     dispatch({
-                        type: 'END_GAME'
-                    })
+                        type: 'END_GAME',
+                    });
                 }
-            }, 1000)
+            }, 100)
             
         }
     }
